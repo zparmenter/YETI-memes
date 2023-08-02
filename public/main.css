@@ -1,0 +1,38 @@
+body {
+    background-color: rgb(229, 224, 178);
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: black;
+    font-size: 46px;
+}
+
+#canvas{
+    border: 2px solid black;
+}
+
+.memes-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 500px;
+    overflow-y: scroll;
+}
+
+.memes-list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 20px;
+}
+
+.meme-image {
+    height: 200px;
+    width: 200px;
+}

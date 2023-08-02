@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='./main.css'>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    <script src='./lib/jscolor.min.js' defer></script>
+    <script src='./lib/fabric.min.js' defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    <script src='./app.js' defer></script>
+    <title>YETI memes</title>
+</head>
+<body>
+    <h1>YETI memes</h1>
+    <canvas id='canvas'></canvas>
+
+    <section class='object-control-box'>
+        <h6>Objects</h6>
+        <input id='colorPicker' value='#000000' data-jscolor='{}'>
+        <button id='changeTextColor'>Change Text Color</button>
+        <button id='add-text'>Add More Text</button>
+        <button id='save-image'>Save as Image</button>
+    </section>
+
+    <section class='memes'>
+        <ul class='memes-list'>
+        </ul>
+    </section>
+
+    
+</body>
+</html>
