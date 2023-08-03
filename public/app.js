@@ -6,18 +6,21 @@ $(document).ready(() => {
         fontSize: 32,
         fill: '#FFFFFF',
         backgroundColor: 'rgba(0, 0, 0, 0.3)',
-        left: 180,
-        top: 225,
+        left: 65,
+        top: 175,
         radius: 100,
         borderRadius: '25px',
         hasRotatingPoint: true
     });
 
+
+    /*----------FUNCTIONS------------*/
+
     function initCanvas(id) {
 
         return new fabric.Canvas(id, {
-            width: 500,
-            height: 500
+            width: 350,
+            height: 350
         });
 
     }
@@ -65,6 +68,8 @@ $(document).ready(() => {
         a.click();
     }
 
+    /*-------EVENT LISTENERS-------*/
+
     $(document).on('click', '.meme-image', function(e) {
         setBackground($(this).attr('src'), canvas);
     });
@@ -99,6 +104,7 @@ $(document).ready(() => {
         downloadImage(dataURL, 'my-canvas.jpeg');
     });
 
+    /*----------ON LOAD----------*/
     const canvas = initCanvas('canvas');
     getMemes();
     setColorListener();

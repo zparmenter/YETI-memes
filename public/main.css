@@ -11,6 +11,10 @@ h1 {
     font-size: 46px;
 }
 
+.canvas-container {
+    margin: 0 auto;
+}
+
 #canvas{
     border: 2px solid black;
 }
