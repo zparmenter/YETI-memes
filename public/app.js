@@ -2,17 +2,6 @@
 $(document).ready(() => {
     let listItem;
     let listItemImage;
-    let textObject = new fabric.IText('Enter text here...', {
-        fontSize: 32,
-        fill: '#FFFFFF',
-        backgroundColor: 'rgba(0, 0, 0, 0.3)',
-        left: 65,
-        top: 175,
-        radius: 100,
-        borderRadius: '25px',
-        hasRotatingPoint: true
-    });
-
 
     /*----------FUNCTIONS------------*/
 
@@ -68,10 +57,52 @@ $(document).ready(() => {
         a.click();
     }
 
+    function addRectangle() {
+        let canvasCenter = canvas.getCenter();
+        let rectangle = new fabric.Rect({
+            width: 100,
+            height: 50,
+            fill: '#000000',
+            top: canvasCenter.top,
+            left: canvasCenter.left,
+            originX: 'center', 
+            originY: 'center',
+            cornerColor: 'black',
+        });
+        canvas.add(rectangle);
+        canvas.requestRenderAll();
+    }
+
+    function addCircle() {
+        let canvasCenter = canvas.getCenter();
+        let circle = new fabric.Circle({
+            radius: 50,
+            fill: 'rgb(0, 0, 0)',
+            top: canvasCenter.top,
+            left: canvasCenter.left,
+            originX: 'center', 
+            originY: 'center',
+            cornerColor: 'black',
+            cornerStyle: 'circle'
+        });
+        canvas.add(circle);
+        canvas.requestRenderAll();
+    }
+
+    function removeObject() {
+        let selected = canvas.getActiveObject();
+        canvas.remove(selected);
+        canvas.requestRenderAll();
+    }
+
     /*-------EVENT LISTENERS-------*/
 
     $(document).on('click', '.meme-image', function(e) {
         setBackground($(this).attr('src'), canvas);
+    });
+
+    $(document).on('click', '.remove', function() {
+        removeObject();
     });
 
     
@@ -79,23 +110,34 @@ $(document).ready(() => {
     $('#add-text').on('click', function() {
         let textObject = new fabric.IText('Enter text here...', {
             fontSize: 32,
-            fill: '#FFFFFF',
-            backgroundColor: 'rgba(0, 0, 0, 0.3)',
-            left: 180,
-            top: 225,
+            fill: 'rgb(0, 0, 0)',
+            left: 65,
+            top: 175,
             radius: 100,
             borderRadius: '25px',
             hasRotatingPoint: true
         });
         canvas.add(textObject).setActiveObject(textObject);
         canvas.requestRenderAll();
-    })
+    });
+
+    $('.selected-objects').on('click', function() {
+        console.log(canvas.getActiveObject());
+    });
+
+    $('.add-rectangle').on('click', function() {
+        addRectangle();
+    });
+
+    $('.add-circle').on('click', function() {
+        addCircle();
+    });
 
     $('#changeTextColor').on('click', function() {
         console.log($('#colorPicker').text());
         canvas.getActiveObject().set('fill', $('#colorPicker').attr('data-current-color'));
         canvas.requestRenderAll();
-    })
+    });
 
     // Convert canvas to image
     $('#save-image').on("click", function(e) {
@@ -107,8 +149,6 @@ $(document).ready(() => {
     /*----------ON LOAD----------*/
     const canvas = initCanvas('canvas');
     getMemes();
-    setColorListener();
-    canvas.add(textObject).setActiveObject(textObject);
 
 });
 

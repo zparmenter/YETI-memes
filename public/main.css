@@ -1,5 +1,6 @@
 body {
     background-color: rgb(229, 224, 178);
+    margin: 0px;
 }
 
 h1 {
@@ -17,6 +18,35 @@ h1 {
 
 #canvas{
     border: 2px solid black;
+}
+
+.main-section {
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.tools {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border: 4px solid black;
+    border-radius: 4px;
+    margin-top: 50px;
+}
+
+h2 {
+    display: flex;
+    background-color: #000;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.tool {
+
 }
 
 .memes-list {
@@ -39,4 +69,21 @@ h1 {
 .meme-image {
     height: 200px;
     width: 200px;
+}
+
+@media only screen and (max-width: 768px) {
+    .main-section {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .memes-list {
+        grid-template-columns: 1fr 1fr;
+        padding-left: 0px;
+    }
+
+    .meme-image {
+        height: 100px;
+        width: 100px;
+    }
 }

@@ -17,18 +17,36 @@
     <h1>YETI memes</h1>
     <canvas id='canvas'></canvas>
 
-    <section class='object-control-box'>
-        <h6>Objects</h6>
-        <input id='colorPicker' value='#000000' data-jscolor='{}'>
-        <button id='changeTextColor'>Change Text Color</button>
-        <button id='add-text'>Add More Text</button>
+    <section class='main-section tools'>
+        <div class='section-header'>
+            <h2>Tool Box</h2>
+        </div>
+        
+        <div class='tool text-tool'>
+            <input id='colorPicker' value='#000000' data-jscolor='{}' />
+            <button id='changeTextColor'>Change Color</button>
+            <button id='add-text'>Add Text Box</button>
+            <button class='add-rectangle'>Add Rectangle</button>
+            <button class='add-circle'>Add Circle</button>
+            <button class='selected-objects'>Select Object</button>
+        </div>
+
+        <button class='remove'>Remove</button>
+
         <button id='save-image'>Save as Image</button>
     </section>
 
-    <section class='memes'>
+    <section class='main-section memes'>
+        <div class='section-header'>
+            <h2>Memes</h2>
+        </div>
+        
         <ul class='memes-list'>
         </ul>
     </section>
+    <footer class='footer'>
+        <h2>Made with fun, by Zach</h2>
+    </footer>
 
     
 </body>
